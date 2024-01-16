@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+int nr_prim(int a)
+{
+    int i, d;
+    bool prim;
+    
+    for(i = a + 1; i != 0; i ++)
+    {
+        prim = true;
+        
+        for(d = 2; d * d <= i; d ++)
+        {
+            if(i % d == 0)
+            {
+                prim = false;
+                break;
+            }
+        }
+        
+        if(prim == true)
+        {
+            return i;
+        }
+    }
+}
